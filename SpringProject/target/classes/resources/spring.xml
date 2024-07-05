@@ -10,10 +10,40 @@
 		<property name="age" value="21"></property>
 	</bean> -->
 	
-	<bean id="Alien" class="com.education.SpringProject.Alien">
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
 		<property name="age" value="21"></property>
 		<property name="laptop" ref="LaptopAW"></property>
-	</bean>
+	</bean> -->
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
+		<constructor-arg value="21" />
+		<property name="age" value="21"></property>
+		<property name="laptop" ref="LaptopAW"></property>
+	</bean> -->
+	
+	<!-- In the below case we need to mention type, if we don't want to mention the type then we need to follow the sequence -->
+	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
+		<constructor-arg value="21" />
+		<constructor-arg ref="LaptopAW" />
+	</bean> -->
+	
+	<!-- In the below case it'll fail if there are multiple variables -->
+	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
+		<constructor-arg type="com.education.SpringProject.Laptop" ref="LaptopAW" />
+		<constructor-arg type="int" value="21" />
+	</bean> -->
+	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
+		<constructor-arg index="1" ref="LaptopAW" />
+		<constructor-arg index="0" value="21" />
+	</bean> -->
+	
+	<!-- To make this work we need to use this @ConstructorProperties({"age", "laptop"}) -->
+	<bean id="Alien" class="com.education.SpringProject.Alien">
+		<constructor-arg name="laptop" ref="LaptopAW" />
+		<constructor-arg name="age" value="21" />
+	</bean>	
 	<bean id="LaptopAW" class="com.education.SpringProject.Laptop"></bean>
 
 </beans>
