@@ -30,8 +30,28 @@ public class App {
 		 * And the above line will create a container for us. 
 		 */
 		
+		/*
+		 *  
+		 *  By default the spring follow the singleton design pattern.
+		 *  
+		 * 	By deafult if the scope is prototype then the objct will get created only when 
+		 * 	context.getBean metthod is called.
+		 *  
+		 */
+		
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("resources/spring.xml");
+		
+		System.out.println();
+		
 		Alien obj = (Alien) context.getBean("Alien");
+		System.out.println(obj.age);
 		obj.code();
+		
+		System.out.println();
+		
+		Alien obj1 = (Alien) context.getBean("Alien");
+		System.out.println(obj1.age);
+		obj1.code();
 	}
 }
