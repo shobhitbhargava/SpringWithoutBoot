@@ -84,9 +84,7 @@
 		<property name="computer" ref="DesktopAW"></property>
 	</bean>
 	
-	<bean id="computer1" class="com.education.SpringProject.Laptop" primary="true"></bean>
-	<bean id="computer2" class="com.education.SpringProject.Desktop" lazy-init="true"></bean>
-	<bean id="LaptopAW" class="com.education.SpringProject.Laptop" lazy-init="true"></bean>
+	<bean id="LaptopAW" class="com.education.SpringProject.Laptop" primary="true"></bean>
 	<bean id="DesktopAW" class="com.education.SpringProject.Desktop" lazy-init="true"></bean>
 
 </beans>

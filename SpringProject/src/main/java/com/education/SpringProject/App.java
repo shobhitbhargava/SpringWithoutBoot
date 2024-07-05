@@ -44,14 +44,22 @@ public class App {
 		
 		System.out.println();
 		
-		Alien obj = (Alien) context.getBean("Alien");
+		//Alien obj = (Alien) context.getBean("Alien");
+		Alien obj = context.getBean("Alien", Alien.class);
 		System.out.println(obj.getAge());
 		obj.code();
 		
 		System.out.println();
 		
-		Alien obj1 = (Alien) context.getBean("Alien");
+		//Alien obj1 = (Alien) context.getBean("Alien");
+		Alien obj1 = context.getBean("Alien", Alien.class);
 		System.out.println(obj1.getAge());
 		obj1.code();
+		
+		Desktop desktop = context.getBean(Desktop.class);
+		System.out.println(desktop);
+		
+		Computer computer = context.getBean(Computer.class);
+		System.out.println(computer);
 	}
 }
