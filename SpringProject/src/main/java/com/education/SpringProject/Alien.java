@@ -2,8 +2,6 @@ package com.education.SpringProject;
 
 import java.beans.ConstructorProperties;
 
-import javax.management.ConstructorParameters;
-
 public class Alien {
 	
 	private int age;
