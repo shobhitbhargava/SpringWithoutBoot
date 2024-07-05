@@ -67,14 +67,26 @@
 	<!-- ByType will only come into picture when there is a confusion in that case the primary="true" 
 	will be selected otherwise it'll select the named ones-->
 	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien" autowire="byType">
+		<property name="age" value="21"></property>
+		<property name="computer" ref="DesktopAW"></property>
+	</bean>
+	
+	<bean id="computer1" class="com.education.SpringProject.Laptop" primary="true"></bean>
+	<bean id="computer2" class="com.education.SpringProject.Desktop" lazy-init="true"></bean>
+	<bean id="LaptopAW" class="com.education.SpringProject.Laptop" lazy-init="true"></bean>
+	<bean id="DesktopAW" class="com.education.SpringProject.Desktop" lazy-init="true"></bean> -->
+	
+	<!-- This will make sure that only the beans which has the dependency will be created and rest 
+	will not get created -->
 	<bean id="Alien" class="com.education.SpringProject.Alien" autowire="byType">
 		<property name="age" value="21"></property>
 		<property name="computer" ref="DesktopAW"></property>
 	</bean>
 	
 	<bean id="computer1" class="com.education.SpringProject.Laptop" primary="true"></bean>
-	<bean id="computer2" class="com.education.SpringProject.Desktop"></bean>
-	<bean id="LaptopAW" class="com.education.SpringProject.Laptop"></bean>
-	<bean id="DesktopAW" class="com.education.SpringProject.Desktop"></bean>
+	<bean id="computer2" class="com.education.SpringProject.Desktop" lazy-init="true"></bean>
+	<bean id="LaptopAW" class="com.education.SpringProject.Laptop" lazy-init="true"></bean>
+	<bean id="DesktopAW" class="com.education.SpringProject.Desktop" lazy-init="true"></bean>
 
 </beans>
