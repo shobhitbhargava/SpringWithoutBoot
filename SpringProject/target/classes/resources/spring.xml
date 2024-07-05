@@ -40,10 +40,41 @@
 	</bean> -->
 	
 	<!-- To make this work we need to use this @ConstructorProperties({"age", "laptop"}) -->
-	<bean id="Alien" class="com.education.SpringProject.Alien">
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
 		<constructor-arg name="laptop" ref="LaptopAW" />
 		<constructor-arg name="age" value="21" />
-	</bean>	
+	</bean>	 -->
+
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien">
+		<property name="age" value="21"></property>
+		<property name="computer" ref="DesktopAW"></property>
+	</bean> -->
+	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien" autowire="byName">
+		<property name="age" value="21"></property>
+		<property name="computer" ref="DesktopAW"></property>
+	</bean> -->
+	
+	<!-- <bean id="Alien" class="com.education.SpringProject.Alien" autowire="byType">
+		<property name="age" value="21"></property>
+	</bean>
+	
+	<bean id="computer1" class="com.education.SpringProject.Laptop"></bean>
+	<bean id="computer2" class="com.education.SpringProject.Desktop"></bean>
 	<bean id="LaptopAW" class="com.education.SpringProject.Laptop"></bean>
+	<bean id="DesktopAW" class="com.education.SpringProject.Desktop"></bean> -->
+	
+	<!-- ByType will only come into picture when there is a confusion in that case the primary="true" 
+	will be selected otherwise it'll select the named ones-->
+	
+	<bean id="Alien" class="com.education.SpringProject.Alien" autowire="byType">
+		<property name="age" value="21"></property>
+		<property name="computer" ref="DesktopAW"></property>
+	</bean>
+	
+	<bean id="computer1" class="com.education.SpringProject.Laptop" primary="true"></bean>
+	<bean id="computer2" class="com.education.SpringProject.Desktop"></bean>
+	<bean id="LaptopAW" class="com.education.SpringProject.Laptop"></bean>
+	<bean id="DesktopAW" class="com.education.SpringProject.Desktop"></bean>
 
 </beans>

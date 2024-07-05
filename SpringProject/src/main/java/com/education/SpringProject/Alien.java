@@ -23,6 +23,7 @@ public class Alien {
 	}
 
 	public void setComputer(Computer computer) {
+		System.out.println("Setter Called for Computer");
 		this.computer = computer;
 	}
 
