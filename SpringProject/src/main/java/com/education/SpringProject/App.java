@@ -45,13 +45,13 @@ public class App {
 		System.out.println();
 		
 		Alien obj = (Alien) context.getBean("Alien");
-		System.out.println(obj.age);
+		System.out.println(obj.getAge());
 		obj.code();
 		
 		System.out.println();
 		
 		Alien obj1 = (Alien) context.getBean("Alien");
-		System.out.println(obj1.age);
+		System.out.println(obj1.getAge());
 		obj1.code();
 	}
 }
